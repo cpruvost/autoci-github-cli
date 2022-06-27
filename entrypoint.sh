@@ -1,5 +1,5 @@
 #!/bin/sh -l
 
-echo "Hello $1"
+echo "OCI User $_ENV['INPUT_USER']"
 time=$(date)
 echo ::set-output name=time::$time

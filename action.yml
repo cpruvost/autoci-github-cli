@@ -1,14 +1,33 @@
-name: 'Hello OCI User'
-description: 'Greet someone and record the time'
+name: 'oci-cli'
+description: 'Installing oci-cli (Oracle Cloud Infrastructure CLI)'
+author: 'Christophe Pruvost @cpruvost'
 inputs:
-  oci-user:  # id of input
+  user:
     description: 'OCI User'
     required: true
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  fingerprint:
+    description: 'OCI Fingerprint'
+    required: true
+  tenancy:
+    description: 'OCI Tenancy'
+    required: true
+  region:
+    description: 'OCI Region'
+    required: true
+  api_key:
+    description: 'OCI API Key'
+    required: true
+  verbose:
+    description: 'Debugging Mode'
+    default: "false"
+    required: false
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.oci-user }}
+    - ${{ inputs.user }}
+    - ${{ inputs.fingerprint }}
+    - ${{ inputs.tenancy }}
+    - ${{ inputs.region }}
+    - ${{ inputs.api_key }}
