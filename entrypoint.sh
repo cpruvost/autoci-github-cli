@@ -18,7 +18,7 @@ echo "::endgroup::"
 echo "::group::Create OCI config file"
 mkdir ~/.oci
 echo "$INPUT_API_KEY" > ~/.oci/key.pem
-echo "[default]" > ~/.oci/config
+echo "[DEFAULT]" > ~/.oci/config
 echo "user=$INPUT_USER" >> ~/.oci/config
 echo "fingerprint=$INPUT_FINGERPRINT" >> ~/.oci/config
 echo "key_file=~/.oci/key.pem" >> ~/.oci/config
