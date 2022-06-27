@@ -44,7 +44,7 @@ echo "::group::Region List"
 echo "::endgroup::"
 
 echo "::group::inlineScript execution"
-echo "script lines: $INPUT_INLINESCRIPT"
+echo "script lines: $INPUT_INLINESCRIPT[1]"
 echo "::endgroup::"
 
 time=$(date)
