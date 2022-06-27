@@ -1,11 +1,11 @@
 # Container image that runs your code
-FROM oraclelinux:8-slim
+FROM ubuntu:latest
 
+#DO NOT USE CAUSE TOO LONG : 1min20s
 #Enable dev package
-RUN microdnf -y install oraclelinux-developer-release-el8
-
+#RUN microdnf -y install oraclelinux-developer-release-el8
 #OCI CLI
-RUN microdnf -y install python36-oci-cli
+#RUN microdnf -y install python36-oci-cli
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
