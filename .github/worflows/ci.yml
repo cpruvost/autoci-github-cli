@@ -1,0 +1,28 @@
+name: ci
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v3
+      
+      - name: Install oci-cli
+        uses: cpruvost/autoci-github-cli@latest
+        with:
+          user: "${{ secrets.OCI_USER }}"
+          ##fingerprint: "${{ secrets.OCI_FINGERPRINT }}"
+          ##tenancy: "${{ secrets.OCI_TENANCY }}"
+          ##region: "${{ secrets.OCI_REGION }}"
+          ##api_key: |
+            ##${{ secrets.OCI_API_KEY }}
+          ##verbose: true
+
+      ##- run: cat ~/.oci/config
+
+      ##- run: oci -v

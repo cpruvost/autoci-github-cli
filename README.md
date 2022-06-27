@@ -1,23 +1,24 @@
-# Hello world docker action
+# Github Action for Oracle Cloud Infrastructure CLI
 
-This action prints "Hello World" to the log or "Hello" + the name of a person to greet. To learn how this action was built, see "[Creating a Docker container action](https://help.github.com/en/articles/creating-a-docker-container-action)" in the GitHub Help documentation.
+With Github Action for Oracle Cloud Infrastructure CLI, you can automate your workflow by executing OCI CLI commands to manage OCI resources inside of an Action.
 
 ## Inputs
 
-### `who-to-greet`
+### `oci-user`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The oci id of the user. Ex `"ocid1.user.oc1..aaaaaaaaxxx........."`.
 
 ## Outputs
 
-### `time`
+### `version`
 
-The time we greeted you.
+The latest OCI CLI version installed.
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-docker-action@master
-with:
-  who-to-greet: 'Mona the Octocat'
+- name: Install oci-cli
+  uses: cpruvost/autoci-github-cli@v1.0.0
+  with:
+    user: "${{ secrets.OCI_USER }}"
 ```
