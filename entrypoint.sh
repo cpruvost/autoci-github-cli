@@ -46,6 +46,7 @@ echo "::endgroup::"
 echo "::group::inlineScript execution"
 for i in "${INPUT_INLINESCRIPT[@]}"
 do
+    echo $i
 	eval $i
 done
 echo "::endgroup::"
