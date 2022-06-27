@@ -16,6 +16,8 @@ chmod +x install.sh
 ##echo "::endgroup::"
 
 ##echo "::group::Create OCI config file"
+mkdir ~/.oci
+
 echo "[default]" > ~/.oci/config
 echo "user=$INPUT_USER" >> ~/.oci/config
 cat ~/.oci/config
