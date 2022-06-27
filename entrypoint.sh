@@ -14,7 +14,7 @@ curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/insta
 chmod +x install.sh
 ./install.sh --accept-all-defaults
 echo "/home/runner/bin" >> $GITHUB_PATH
-exec -l $SHELL
+ls /home/runner/bin
 echo "::endgroup::"
 
 echo "::group::Create OCI config file"
