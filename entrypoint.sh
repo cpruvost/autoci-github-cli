@@ -21,7 +21,7 @@ echo "$INPUT_API_KEY" > ~/.oci/key.pem
 echo "[default]" > ~/.oci/config
 echo "user=$INPUT_USER" >> ~/.oci/config
 echo "fingerprint=$INPUT_FINGERPRINT" >> ~/.oci/config
-echo "key_file=~/.oci/key.pem"
+echo "key_file=~/.oci/key.pem" >> ~/.oci/config
 echo "tenancy=$INPUT_TENANCY" >> ~/.oci/config
 echo "region=$INPUT_REGION" >> ~/.oci/config
 cat ~/.oci/config
