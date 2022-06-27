@@ -13,6 +13,8 @@ echo "::group::Install OCI CLI"
 curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
 chmod +x install.sh
 ./install.sh --accept-all-defaults
+echo "/home/runner/bin" >> $GITHUB_PATH
+exec -l $SHELL
 echo "::endgroup::"
 
 echo "::group::Create OCI config file"
