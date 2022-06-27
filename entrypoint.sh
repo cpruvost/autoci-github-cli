@@ -13,8 +13,6 @@ echo "::group::Install OCI CLI"
 curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
 chmod +x install.sh
 ./install.sh --accept-all-defaults
-echo "/home/runner/bin" >> $GITHUB_PATH
-ls /home/runner/bin
 echo "::endgroup::"
 
 echo "::group::Create OCI config file"
@@ -30,8 +28,12 @@ cat ~/.oci/config
 echo "::endgroup::"
 
 echo "::group::Repair OCI File"
-oci setup repair-file-permissions --file /home/runner/.oci/config
-oci setup repair-file-permissions --file /home/runner/.oci/key.pem
+/github/home/bin/oci setup repair-file-permissions --file /home/runner/.oci/config
+/github/home/bin/oci setup repair-file-permissions --file /home/runner/.oci/key.pem
+echo "::endgroup::"
+
+echo "::group::OCI CLI Version"
+/github/home/bin/oci -v
 echo "::endgroup::"
 
 time=$(date)
