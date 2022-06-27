@@ -21,7 +21,9 @@ inputs:
     description: 'Debugging Mode'
     default: "false"
     required: false
-
+outputs:
+  time:
+    description: "The greeting time"
 runs:
   using: 'docker'
   image: 'Dockerfile'
