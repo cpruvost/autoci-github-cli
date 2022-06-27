@@ -8,7 +8,7 @@ FROM ubuntu:latest
 #RUN microdnf -y install python36-oci-cli
 
 #Install Curl
-RUN apt install curl
+RUN sudo apt install curl
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
