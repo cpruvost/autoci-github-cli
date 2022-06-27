@@ -4,7 +4,7 @@ With Github Action for Oracle Cloud Infrastructure CLI, you can automate your wo
 
 ## Inputs
 
-### `oci-user`
+### `user`
 
 **Required** The oci id of the user. Ex `"ocid1.user.oc1..aaaaaaaaxxx........."`.
 
