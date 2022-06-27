@@ -40,5 +40,9 @@ echo "::group::Region List"
 /github/home/bin/oci iam region list
 echo "::endgroup::"
 
+echo "::group::inlineScript execution"
+echo "script lines: $INPUT_INLINESCRIPT"
+echo "::endgroup::"
+
 time=$(date)
 echo ::set-output name=time::$time

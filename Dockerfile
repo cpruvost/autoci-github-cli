@@ -1,7 +1,7 @@
 # Container image that runs your code
 FROM ubuntu:latest
 
-#DO NOT USE CAUSE TOO LONG : 1min20s
+#DO NOT USE with FROM oraclelinux:8-slim CAUSE TOO LONG : 1min20s
 #Enable dev package
 #RUN microdnf -y install oraclelinux-developer-release-el8
 #OCI CLI

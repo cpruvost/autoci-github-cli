@@ -17,13 +17,15 @@ inputs:
   api_key:
     description: 'OCI API Key'
     required: true
-  verbose:
-    description: 'Debugging Mode'
-    default: "false"
-    required: false
+  inlineScript:
+    description: 'Specify the script here'
+    required: true
 outputs:
   time:
     description: "The greeting time"
+branding:
+  icon: 'cloud'
+  color: 'red'    
 runs:
   using: 'docker'
   image: 'Dockerfile'
