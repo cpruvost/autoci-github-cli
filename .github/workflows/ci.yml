@@ -22,7 +22,9 @@ jobs:
           region: "${{ secrets.OCI_REGION }}"
           api_key: |
             ${{ secrets.OCI_API_KEY }}
-          verbose: true
+          inlineScript: |
+            oci iam region list
+            oci iam region list 
 
       ##- run: cat ~/.oci/config
 
