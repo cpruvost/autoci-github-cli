@@ -1,6 +1,9 @@
 #!/bin/sh -l
 
-##printenv
+echo "::group::List Env Variables"
+printenv
+echo "::endgroup::"
+
 echo "::group::Input Variables"
 echo "User $INPUT_USER"
 echo "Fingerprint $INPUT_FINGERPRINT"
