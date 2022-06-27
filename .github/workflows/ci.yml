@@ -16,7 +16,7 @@ jobs:
       - name: Install oci-cli
         uses: cpruvost/autoci-github-cli@v1.0.0
         with:
-          user: "${{ secrets.OCI_USER }}"
+          oci-user: "${{ secrets.OCI_USER }}"
           ##fingerprint: "${{ secrets.OCI_FINGERPRINT }}"
           ##tenancy: "${{ secrets.OCI_TENANCY }}"
           ##region: "${{ secrets.OCI_REGION }}"
