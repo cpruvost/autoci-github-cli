@@ -28,12 +28,16 @@ cat ~/.oci/config
 echo "::endgroup::"
 
 echo "::group::Repair OCI File"
-/github/home/bin/oci setup repair-file-permissions --file /home/runner/.oci/config
-/github/home/bin/oci setup repair-file-permissions --file /home/runner/.oci/key.pem
+/github/home/bin/oci setup repair-file-permissions --file ~/.oci/config
+/github/home/bin/oci setup repair-file-permissions --file ~/.oci/key.pem
 echo "::endgroup::"
 
 echo "::group::OCI CLI Version"
 /github/home/bin/oci -v
+echo "::endgroup::"
+
+echo "::group::Region List"
+/github/home/bin/oci iam region list
 echo "::endgroup::"
 
 time=$(date)
