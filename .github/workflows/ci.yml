@@ -15,6 +15,7 @@ jobs:
       
       - name: Run oci-cli
         uses: cpruvost/autoci-github-cli@main
+        id: runscript
         with:
           user: "${{ secrets.OCI_USER }}"
           fingerprint: "${{ secrets.OCI_FINGERPRINT }}"
@@ -27,6 +28,5 @@ jobs:
             /github/home/bin/oci iam region list 
             /github/home/bin/oci compute instance list --compartment-id=${{ secrets.OCI_COMPARTMENT }} --query 'data[*]."display-name"'
 
-      ##- run: cat ~/.oci/config
-
-      ##- run: oci -v
+      - run: |
+          echo "Time: ${{ steps.runscript.outputs.time }}"

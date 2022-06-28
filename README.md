@@ -8,6 +8,10 @@ With Github Action for Oracle Cloud Infrastructure CLI, you can automate your wo
 
 **Required** The oci id of the user. Ex `"ocid1.user.oc1..aaaaaaaaxxx........."`.
 
+### `fingerprint`
+
+**Required** The fingerprint of API key. Ex `"4f:90:09:d7:2a:ea:81........."`.
+
 ## Outputs
 
 ### `version`
