@@ -24,7 +24,6 @@ jobs:
           api_key: |
             ${{ secrets.OCI_API_KEY }}
           inlineScript: |
-            echo "Hello Script"
             /github/home/bin/oci iam region list 
             /github/home/bin/oci compute instance list --compartment-id=${{ secrets.OCI_COMPARTMENT }} --query 'data[*]."display-name"'
 
