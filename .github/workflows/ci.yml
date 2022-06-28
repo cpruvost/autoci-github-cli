@@ -23,7 +23,7 @@ jobs:
           api_key: |
             ${{ secrets.OCI_API_KEY }}
           inlineScript: |
-            /github/home/bin/oci iam region list
+            echo "Hello Script"
             /github/home/bin/oci iam region list 
 
       ##- run: cat ~/.oci/config
