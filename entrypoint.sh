@@ -46,9 +46,9 @@ echo "::endgroup::"
 echo "::group::inlineScript execution"
 for i in "${INPUT_INLINESCRIPT[@]}"
 do
-	eval "$i"
+	output=$(eval "$i")
 done
 echo "::endgroup::"
 
 time=$(date)
-echo ::set-output name=time::$time
+echo ::set-output name=result::$output

@@ -29,4 +29,4 @@ jobs:
             /github/home/bin/oci compute instance list --compartment-id=${{ secrets.OCI_COMPARTMENT }} --query 'data[*]."display-name"'
 
       - run: |
-          echo "Time: ${{ steps.runscript.outputs.time }}"
+          echo "Result: ${{ steps.runscript.outputs.result }}"
