@@ -15,7 +15,7 @@ echo "::endgroup::"
 echo "::group::Install OCI CLI"
 curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
 chmod +x install.sh
-./install.sh --accept-all-defaults
+./install.sh --accept-all-defaults --exec-dir /usr/local/bin
 echo "::endgroup::"
 
 echo "::group::Create OCI config file"
@@ -31,16 +31,16 @@ cat ~/.oci/config
 echo "::endgroup::"
 
 echo "::group::Repair OCI File"
-/github/home/bin/oci setup repair-file-permissions --file ~/.oci/config
-/github/home/bin/oci setup repair-file-permissions --file ~/.oci/key.pem
+oci setup repair-file-permissions --file ~/.oci/config
+oci setup repair-file-permissions --file ~/.oci/key.pem
 echo "::endgroup::"
 
 echo "::group::OCI CLI Version"
-/github/home/bin/oci -v
+oci -v
 echo "::endgroup::"
 
-echo "::group::Region List"
-/github/home/bin/oci iam region list
+echo "::group::Test with Region List"
+oci iam region list
 echo "::endgroup::"
 
 echo "::group::inlineScript execution"
