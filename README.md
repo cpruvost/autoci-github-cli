@@ -1,4 +1,4 @@
-# Github Action for Oracle Cloud Infrastructure CLI
+# Github Action (Docker) for Oracle Cloud Infrastructure CLI
 
 NOTE : JUST USEFULL FOR TRAINING YOURSELF WITH A Github Docker Action. Do not use it. Use the javascript version instead !
 
@@ -28,7 +28,9 @@ With Github Action for Oracle Cloud Infrastructure CLI, you can automate your wo
 **Required** The api_key to access OCI. Ex `"-----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEAyCt82bSAeSWBtwK1razNApgDVvpVD1IfHUti+0n9X2ZTYb9k........"`.
 
+### `inlineScript`
 
+**Required** The oci cli commands to run. Ex `"oci iam region list"`.
 ## Outputs
 
 ### `result`
@@ -47,9 +49,8 @@ The result from OCI CLI
           region: "${{ secrets.OCI_REGION }}"
           api_key: |
             ${{ secrets.OCI_API_KEY }}
-          inlineScript: |
-            /github/home/bin/oci iam region list 
-            /github/home/bin/oci compute instance list --compartment-id=${{ secrets.OCI_COMPARTMENT }} --query 'data[*]."display-name"'
+          inlineScript: | 
+            oci compute instance list --compartment-id=${{ secrets.OCI_COMPARTMENT }} --query 'data[*]."display-name"'
 
 - run: |
     echo "Result: ${{ steps.runscript.outputs.result }}"
